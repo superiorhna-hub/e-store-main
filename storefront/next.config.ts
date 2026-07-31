@@ -54,14 +54,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   // Apply security headers to all responses
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-    ]
-  },
+  // Removed temporarily for debugging
+
 
   // Allowed remote image hostnames for next/image
   // Add any CDN or external image host your products use here
