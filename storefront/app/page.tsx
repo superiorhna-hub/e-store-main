@@ -5,6 +5,10 @@ import IndustriesStrip from "@/components/IndustriesStrip"
 import Capabilities from "@/components/Capabilities"
 import WhyUs from "@/components/WhyUs"
 import Cta from "@/components/Cta"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+import NewsletterPopup from "@/components/NewsletterPopup"
+import RevealObserver from "@/components/RevealObserver"
 
 export const metadata: Metadata = {
   title: "Superior Harness & Assembly — Custom Wire Harness Manufacturer",
@@ -15,12 +19,18 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <About />
-<IndustriesStrip />
-      <Capabilities />
-      <WhyUs />
-      <Cta />
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <IndustriesStrip />
+        <Capabilities />
+        <WhyUs />
+        <Cta />
+      </main>
+      <Footer />
+      <NewsletterPopup />
+      <RevealObserver />
     </>
   )
 }
