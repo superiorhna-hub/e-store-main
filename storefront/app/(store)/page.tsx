@@ -1,0 +1,26 @@
+import type { Metadata } from "next"
+import Hero from "@/components/Hero"
+import About from "@/components/About"
+import IndustriesStrip from "@/components/IndustriesStrip"
+import Capabilities from "@/components/Capabilities"
+import WhyUs from "@/components/WhyUs"
+import Cta from "@/components/Cta"
+
+export const metadata: Metadata = {
+  title: "Superior Harness & Assembly — Custom Wire Harness Manufacturer",
+  description:
+    "Custom wire harness and cable assembly manufacturer specializing in high-quality engineered wiring solutions for OEMs, medical devices, robotics, and EV applications.",
+}
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <About />
+<IndustriesStrip />
+      <Capabilities />
+      <WhyUs />
+      <Cta />
+    </>
+  )
+}

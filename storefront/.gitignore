@@ -1,0 +1,38 @@
+# Env files
+.env*
+!.env.example
+
+# Build output
+.next/
+dist/
+build/
+out/
+
+# Dependencies
+node_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Vercel
+.vercel
+
+# AI assistant config
+.claude/
+.gemini/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary / Workspace
+scratch/
+.vscode/
+.temp/
+coverage/
+*.sqlite
+*.sqlite3
