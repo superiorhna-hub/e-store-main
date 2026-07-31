@@ -53,8 +53,6 @@ const securityHeaders = [
 ]
 
 const nextConfig: NextConfig = {
-  output: "standalone",
-
   // Apply security headers to all responses
   async headers() {
     return [
