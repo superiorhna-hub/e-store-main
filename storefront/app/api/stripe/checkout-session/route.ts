@@ -52,16 +52,20 @@ export async function POST(request: Request) {
 
     // Restrict redirect URLs to the same origin as the store to prevent
     // open-redirect phishing (attacker supplies an external successUrl).
-    const storeOrigin = process.env.NEXT_PUBLIC_STORE_URL
+    const configuredOrigin = process.env.NEXT_PUBLIC_STORE_URL
       ? new URL(process.env.NEXT_PUBLIC_STORE_URL).origin
       : null
 
-    if (storeOrigin) {
-      const successOrigin = new URL(successUrl).origin
-      const cancelOrigin  = new URL(cancelUrl).origin
-      if (successOrigin !== storeOrigin || cancelOrigin !== storeOrigin) {
-        return NextResponse.json({ error: "Invalid redirect URL" }, { status: 400 })
-      }
+    const requestOrigin = new URL(request.url).origin
+    const successOrigin = new URL(successUrl).origin
+    const cancelOrigin  = new URL(cancelUrl).origin
+
+    // Allow if it matches either the explicitly configured origin OR the actual request origin
+    const isValidSuccess = successOrigin === configuredOrigin || successOrigin === requestOrigin
+    const isValidCancel  = cancelOrigin === configuredOrigin || cancelOrigin === requestOrigin
+
+    if (!isValidSuccess || !isValidCancel) {
+      return NextResponse.json({ error: "Invalid redirect URL" }, { status: 400 })
     }
 
     // ── Server-side price resolution ──────────────────────────────────────────
