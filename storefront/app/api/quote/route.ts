@@ -134,8 +134,8 @@ export async function POST(request: Request) {
     // 1. Await the database/sheet save first to guarantee data is stored
     await appendQuote({ name, email, phone, company, application, quantity, description, hasAttachment })
 
-    // 2. Fire the two emails off in parallel in the background (fire-and-forget)
-    Promise.all([
+  // 2. Fire the two emails off in parallel
+    await Promise.all([
       transporter.sendMail({
         from: `"${fromName} Quotes" <${process.env.GMAIL_USER}>`,
         to: process.env.GMAIL_USER,
