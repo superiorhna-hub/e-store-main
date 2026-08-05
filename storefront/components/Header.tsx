@@ -481,14 +481,12 @@ export default function Header() {
         {/* ── Top Contact Bar ── */}
         <div className="hdr__topbar">
           <div className="hdr__topbar-in">
-                        {/* 
-            <div className="hdr__topbar-soc">
+            <div className="hdr__topbar-soc" style={{ visibility: "hidden" }}>
               <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><IcoFB /></a>
               <a href="https://x.com" aria-label="X" target="_blank" rel="noopener noreferrer"><IcoX /></a>
               <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><IcoIn /></a>
               <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><IcoInsta /></a>
             </div>
-            */}
 
             <div className="hdr__topbar-contacts">
               {/* Old: <a className="hdr__topbar-item" href="tel:+917348910249"><IcoPhone /> +91 7348910249</a> */}

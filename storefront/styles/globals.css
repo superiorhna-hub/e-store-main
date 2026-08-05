@@ -2134,7 +2134,6 @@ button {
 @media (max-width: 1024px) {
   .hdr__topbar-in { padding: 7px 20px; }
   .hdr__bar { padding: 0 20px; }
-  .hdr__topbar-contacts { display: none; }
   .stats-bar__grid { grid-template-columns: 1fr 1fr; }
   .caps-row { grid-template-columns: 1fr; }
   .vm-grid { grid-template-columns: 1fr; }

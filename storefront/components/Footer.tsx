@@ -91,14 +91,12 @@ export default function Footer() {
             <p className="ft__desc">
               Precision wire harness and cable assembly manufacturing for the automotive, medical, robotics, EV, and industrial sectors — built to your exact specifications since day one.
             </p>
-                        {/*
-            <div className="ft__soc">
+            <div className="ft__soc" style={{ visibility: "hidden" }}>
               <a href="https://facebook.com" className="ft__sb" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><IcoFB /></a>
               <a href="https://x.com" className="ft__sb" aria-label="X" target="_blank" rel="noopener noreferrer"><IcoX /></a>
               <a href="https://linkedin.com" className="ft__sb" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><IcoIn /></a>
               <a href="https://instagram.com" className="ft__sb" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><IcoInsta /></a>
             </div>
-            */}
 
           </div>
 
