@@ -365,7 +365,7 @@ button {
   font-size: 12.5px;
 }
 .hdr__topbar-in {
-  max-width: 1400px; margin: 0 auto; padding: 8px 64px;
+  padding: 8px 64px;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .hdr__topbar-soc { display: flex; align-items: center; gap: 16px; }
