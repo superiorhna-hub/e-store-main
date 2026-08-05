@@ -607,7 +607,7 @@ export default function Header() {
             </Link>
 
             {/* Track Order */}
-            <Link href="/track-order" className="hdr--desk" style={{ display: "none", fontFamily: "var(--font-sora), sans-serif", fontSize: "11px", fontWeight: 600, letterSpacing: "0.09em", color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>
+            <Link href="/track-order" className="hdr--desk" style={{ display: "none", fontFamily: "var(--font-sora), sans-serif", fontSize: "clamp(11px, 1vw, 13px)", fontWeight: 600, letterSpacing: "0.09em", color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>
               Track Order
             </Link>
 
