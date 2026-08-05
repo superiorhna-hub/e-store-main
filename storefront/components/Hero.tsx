@@ -101,7 +101,7 @@ export default function Hero() {
               {STATS_DATA.map(({ label, icon }) => (
                 <div className="hero-v2__stat" key={label}>
                   <div style={STAT_ICON_STYLE}>{icon}</div>
-                  <span className="hero-v2__stat-val" style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0em", lineHeight: 1.3 }}>{label}</span>
+                  <span className="hero-v2__stat-val" style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0em", lineHeight: 1.3 }}>{label}</span>
                 </div>
               ))}
             </div>
