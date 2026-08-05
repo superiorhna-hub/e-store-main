@@ -504,9 +504,9 @@ export default function Header() {
             <Image
               src="/images/dark-logo.webp"
               alt="Superior Harness & Assembly"
-              height={64}
-              width={380}
-              style={{ objectFit: "contain", objectPosition: "left center" }}
+              height={80}
+              width={460}
+              style={{ objectFit: "contain", objectPosition: "left center", maxWidth: "100%", height: "auto" }}
               priority
             />
           </Link>

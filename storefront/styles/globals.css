@@ -1592,7 +1592,7 @@ button {
   /* Fix logo sizing so it doesn't push the hamburger off-screen */
   .hdr__logo {
     min-width: 0;
-    max-width: 60%;
+    max-width: 85%;
   }
   .hdr__logo img {
     width: 100% !important;
