@@ -53,6 +53,15 @@ const securityHeaders = [
 ]
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/contact-us',
+        destination: '/contact',
+        permanent: true, // 308 redirect
+      },
+    ]
+  },
   // Apply security headers to all responses
   // Removed temporarily for debugging
 
