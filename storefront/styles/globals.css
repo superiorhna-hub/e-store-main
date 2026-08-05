@@ -1595,7 +1595,9 @@ button {
     max-width: 85%;
   }
   .hdr__logo img {
-    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 56px !important;
+    width: auto !important;
     height: auto !important;
   }
   .hdr__icons {
