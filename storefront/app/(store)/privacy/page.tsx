@@ -61,7 +61,7 @@ export default function PrivacyPage() {
               {/* Old: Email: pateltushar1987@gmail.com */}
               Email: info@superiorharness.com<br />
               {/* Old: Phone: +91 7348910249 */}
-              Phone: +1 734 891 0248
+              Phone: +1 (734) 891-0248
             </p>
           </section>
         </div>

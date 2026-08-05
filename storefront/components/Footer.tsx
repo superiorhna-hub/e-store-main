@@ -142,7 +142,7 @@ export default function Footer() {
               <div>
                 <IcoPhone />
                 {/* Old: <span>+91 7348910249</span> */}
-                <span>+1 734 891 0248</span>
+                <span>+1 (734) 891-0248</span>
               </div>
               <div>
                 <IcoMail />

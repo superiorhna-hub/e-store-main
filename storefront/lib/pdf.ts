@@ -60,7 +60,7 @@ export async function generateInvoicePdf({
         // Old: .text("pateltushar1987@gmail.com", { align: "right", width: 245 })
         .text("info@superiorharness.com", { align: "right", width: 245 })
         // Old: .text("+91 7348910249", { align: "right", width: 245 })
-        .text("+1 734 891 0248", { align: "right", width: 245 });
+        .text("+1 (734) 891-0248", { align: "right", width: 245 });
 
       doc.moveDown(3);
 

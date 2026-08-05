@@ -490,7 +490,7 @@ export default function Header() {
 
             <div className="hdr__topbar-contacts">
               {/* Old: <a className="hdr__topbar-item" href="tel:+917348910249"><IcoPhone /> +91 7348910249</a> */}
-              <a className="hdr__topbar-item" href="tel:+17348910248"><IcoPhone /> +1 734 891 0248</a>
+              <a className="hdr__topbar-item" href="tel:+17348910248"><IcoPhone /> +1 (734) 891-0248</a>
               {/* Old: <a className="hdr__topbar-item" href="mailto:sales@superiorharness.com"><IcoMail /> <span>sales@superiorharness.com</span></a> */}
               <a className="hdr__topbar-item" href="mailto:info@superiorharness.com"><IcoMail /> <span>info@superiorharness.com</span></a>
             </div>
