@@ -602,17 +602,17 @@ export default function Header() {
           {/* Right icons */}
           <div className="hdr__icons" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             {/* Shop Online */}
-            <Link href="/shop" className="hdr--desk hdr-shop-btn">
+            <Link href="/shop" className="hdr--desk hdr-shop-btn" style={{ display: "none" }}>
               Shop Online
             </Link>
 
             {/* Track Order */}
-            <Link href="/track-order" className="hdr--desk" style={{ fontFamily: "var(--font-sora), sans-serif", fontSize: "11px", fontWeight: 600, letterSpacing: "0.09em", color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>
+            <Link href="/track-order" className="hdr--desk" style={{ display: "none", fontFamily: "var(--font-sora), sans-serif", fontSize: "11px", fontWeight: 600, letterSpacing: "0.09em", color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>
               Track Order
             </Link>
 
             {/* Cart */}
-            <Link href="/cart" className="hic" aria-label="Shopping cart" style={{ position: "relative" }}>
+            <Link href="/cart" className="hic" aria-label="Shopping cart" style={{ display: "none", position: "relative" }}>
               <IcoCart />
               {totalItems > 0 && <span className="cdot" />}
             </Link>
@@ -729,7 +729,7 @@ export default function Header() {
               key={href}
               href={href}
               className="mob-nav__link"
-              style={{ transitionDelay: menuOpen ? `${150 + i * 50}ms` : "0ms" }}
+              style={{ display: (href === "/shop" || href === "/track-order") ? "none" : undefined, transitionDelay: menuOpen ? `${150 + i * 50}ms` : "0ms" }}
               onClick={() => setMenuOpen(false)}
             >
               {label}
@@ -747,7 +747,7 @@ export default function Header() {
           </button>
         </div>
 
-        <div className="mob-nav__bar">
+        <div className="mob-nav__bar" style={{ display: "none" }}>
           <Link href="/cart" className="mob-nav__act" onClick={() => setMenuOpen(false)}>
             <IcoCart />
             Cart
