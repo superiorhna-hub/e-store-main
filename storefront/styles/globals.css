@@ -406,7 +406,7 @@ button {
 .hdr__logo-txt { display: flex; flex-direction: column; line-height: 1; }
 .hdr__logo-name { font-size: 15px; font-weight: 800; letter-spacing: 0.04em; color: #fff; }
 .hdr__logo-sub {
-  font-size: 8px; font-weight: 700; letter-spacing: 0.3em;
+  font-size: clamp(9px, 1vw, 10px); font-weight: 700; letter-spacing: 0.3em;
   color: rgba(255,255,255,0.5); margin-top: 4px;
   border-top: 1px solid rgba(255,255,255,0.24); padding-top: 3px;
 }
@@ -509,7 +509,7 @@ button {
 .hdr__mega-section-title {
   display: flex; align-items: center; gap: 8px;
   font-family: var(--font-mono), monospace;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: clamp(10px, 1.1vw, 12px); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
   color: #888; margin-bottom: 10px; padding-bottom: 10px;
   border-bottom: 1px solid #ececec;
 }
@@ -954,7 +954,7 @@ button {
 /* Chips — outlined only, translucent fill */
 .hero__chip {
   font-family: var(--font-mono), "JetBrains Mono", monospace;
-  font-size: 10px;
+  font-size: clamp(10px, 1.1vw, 12px);
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1820,7 +1820,7 @@ button {
   border-radius: 9px;
   background: var(--acc);
   color: #fff;
-  font-size: 10px;
+  font-size: clamp(10px, 1.1vw, 12px);
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -2204,7 +2204,7 @@ button {
   flex: 1; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch;
 }
 .hero-v2__badge-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
-.hero-v2__badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono), monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #777777; border: 1px solid #dddddd; border-radius: 4px; padding: 4px 10px; }
+.hero-v2__badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono), monospace; font-size: clamp(10px, 1.1vw, 12px); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #777777; border: 1px solid #dddddd; border-radius: 4px; padding: 4px 10px; }
 .hero-v2__badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #0B0F1C; flex-shrink: 0; }
 .hero-v2__h1 { font-family: var(--font-sora), "Sora", sans-serif; font-size: clamp(44px, 5vw, 80px); font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; text-transform: uppercase; margin-bottom: 28px; }
 .hero-v2__h1-primary { color: #0B0F1C; display: block; }
@@ -2214,7 +2214,7 @@ button {
 .hero-v2__stat { display: flex; flex-direction: row; align-items: center; gap: 10px; padding: 18px 14px; border-right: 1px solid #e5e5e5; background: #fff; }
 .hero-v2__stat:last-child { border-right: none; }
 .hero-v2__stat-val { font-family: var(--font-sora), "Sora", sans-serif; font-size: 22px; font-weight: 800; color: #0B0F1C; letter-spacing: -0.02em; }
-.hero-v2__stat-lbl { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; }
+.hero-v2__stat-lbl { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1vw, 11px); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; }
 .hero-v2__ctabar { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 40px; }
 .hero-v2__ctabar .hero-v2__cta-primary,
 .hero-v2__ctabar .hero-v2__cta-secondary { justify-content: center; width: 100%; }
@@ -2235,20 +2235,20 @@ button {
 .hero-v2__quote-btn:hover { background: #0B0F1C; color: #fff; }
 .hero-v2__admin-cta { white-space: nowrap; padding: 0 20px; }
 .hero-v2__form-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
-.hero-v2__form-badge { display: inline-flex; align-items: center; gap: 6px; background: #0B0F1C; color: #fff; font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 16px; }
-.hero-v2__form-eyebrow { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; margin-bottom: 10px; }
+.hero-v2__form-badge { display: inline-flex; align-items: center; gap: 6px; background: #0B0F1C; color: #fff; font-family: var(--font-mono), monospace; font-size: clamp(10px, 1vw, 11px); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 16px; }
+.hero-v2__form-eyebrow { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1vw, 11px); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #777777; margin-bottom: 10px; }
 .hero-v2__form-title { font-family: var(--font-sora), "Sora", sans-serif; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; color: #0B0F1C; margin-bottom: 6px; }
 .hero-v2__form-sub { font-size: 12px; color: #777; margin-bottom: 20px; line-height: 1.5; }
 .hero-v2__form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
 .hero-v2__form-field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; min-width: 0; }
-.hero-v2__form-label { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #666666; }
+.hero-v2__form-label { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1vw, 11px); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #666666; }
 .hero-v2__form-field input, .hero-v2__form-field textarea, .hero-v2__form-field select { width: 100%; background: #f7f7f7; border: 1px solid #e0e0e0; border-radius: 4px; padding: 9px 12px; color: #0B0F1C; font-size: 13px; font-family: inherit; outline: none; transition: border-color 0.2s; box-sizing: border-box; }
 .hero-v2__form-field input::placeholder, .hero-v2__form-field textarea::placeholder { color: #aaa; }
 .hero-v2__form-field input:focus, .hero-v2__form-field textarea:focus, .hero-v2__form-field select:focus { border-color: #999; background: #fff; }
 .hero-v2__form-field select option { background: #fff; color: #0B0F1C; }
 .hero-v2__form-submit { width: 100%; padding: 13px; background: #fff; color: #0B0F1C; border: 1.5px solid #0B0F1C; border-radius: 4px; cursor: pointer; font-family: var(--font-mono), monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.2s, color 0.2s; margin-top: 14px; }
 .hero-v2__form-submit:hover { background: #0B0F1C; color: #fff; }
-.hero-v2__form-footer { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.35); text-align: center; margin-top: 10px; }
+.hero-v2__form-footer { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1vw, 11px); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.35); text-align: center; margin-top: 10px; }
 
 /* ─────────────────────────────────────────────────────────────────────────
    PRODUCT PAGE SECTIONS  (pp- prefix)
@@ -2261,10 +2261,10 @@ button {
 .pp-hero__crumb a:hover { color: #fff; }
 .pp-hero__crumb span { color: #555; }
 .pp-hero__qa { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 6px; padding: 14px 18px; margin-bottom: 28px; max-width: 660px; }
-.pp-hero__qa-label { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; margin-bottom: 6px; }
+.pp-hero__qa-label { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1vw, 11px); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; margin-bottom: 6px; }
 .pp-hero__qa-text { font-size: 13px; color: #bbb; line-height: 1.6; }
 .pp-hero__split { display: grid; grid-template-columns: 1fr 320px; gap: 56px; align-items: start; }
-.pp-hero__cat { font-family: var(--font-mono), monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #aaa; margin-bottom: 14px; }
+.pp-hero__cat { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1.1vw, 12px); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #aaa; margin-bottom: 14px; }
 .pp-hero__h { font-family: var(--font-sora), "Sora", sans-serif; font-size: clamp(40px, 5.5vw, 80px); font-weight: 800; line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase; margin-bottom: 20px; }
 .pp-hero__h .muted { color: #ffffff; display: block; }
 .pp-hero__h .accent { color: #ffffff; display: block; }
@@ -2280,7 +2280,7 @@ button {
 .pp-hero__stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .pp-hero__stat-box { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 6px; padding: 18px 14px; }
 .pp-hero__stat-val { font-family: var(--font-sora), "Sora", sans-serif; font-size: 20px; font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 4px; }
-.pp-hero__stat-lbl { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #666; }
+.pp-hero__stat-lbl { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1vw, 11px); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #666; }
 
 .pp-meaning { background: #fff; padding: 104px 0; }
 [data-theme="dark"] .pp-meaning { background: var(--bg2); }
@@ -2315,7 +2315,7 @@ button {
 .pp-process-grid__cell:hover .pp-process-grid__num { color: #111; }
 [data-theme="dark"] .pp-process-grid__num { color: #333; }
 [data-theme="dark"] .pp-process-grid__cell:hover .pp-process-grid__num { color: #fff; }
-.pp-related-grid__link, .pp-verticals-grid__link { font-family: var(--font-mono), monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #111; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; margin-top: auto; text-decoration: underline; text-underline-offset: 3px; }
+.pp-related-grid__link, .pp-verticals-grid__link { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1.1vw, 12px); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #111; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; margin-top: auto; text-decoration: underline; text-underline-offset: 3px; }
 .pp-related-grid__link:hover, .pp-verticals-grid__link:hover { gap: 10px; }
 
 .pp-specs { background: #fff; padding: 104px 0; }
@@ -2325,7 +2325,7 @@ button {
 [data-theme="dark"] .pp-spec-table tr { border-bottom-color: var(--bd); }
 .pp-spec-table tr:last-child { border-bottom: none; }
 .pp-spec-table td { padding: 16px 0; vertical-align: top; }
-.pp-spec-table .spec-key { font-family: var(--font-mono), monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #888; width: 220px; padding-right: 24px; }
+.pp-spec-table .spec-key { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1.1vw, 12px); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #888; width: 220px; padding-right: 24px; }
 [data-theme="dark"] .pp-spec-table .spec-key { color: var(--textM); }
 .pp-spec-table .spec-val { font-size: 15px; font-weight: 500; color: #1a1a1a; }
 [data-theme="dark"] .pp-spec-table .spec-val { color: var(--text); }
@@ -2336,19 +2336,19 @@ button {
 [data-theme="dark"] .pp-usecases { background: var(--bg); }
 .pp-quote { background: #111; padding: 80px 0; }
 .pp-quote__card { border-left: 4px solid #fff; padding: 32px 40px; background: #1a1a1a; border-radius: 0 8px 8px 0; }
-.pp-quote__label { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #aaa; margin-bottom: 14px; }
+.pp-quote__label { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1vw, 11px); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #aaa; margin-bottom: 14px; }
 .pp-quote__text { font-size: 17px; line-height: 1.7; color: #ddd; font-style: italic; margin-bottom: 24px; }
 .pp-quote__attr { display: flex; align-items: center; gap: 12px; }
 .pp-quote__avatar { width: 36px; height: 36px; border-radius: 4px; background: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-sora), "Sora", sans-serif; font-size: 11px; font-weight: 800; color: #111; flex-shrink: 0; }
 .pp-quote__name { font-size: 13px; font-weight: 700; color: #fff; }
-.pp-quote__role { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #666; }
+.pp-quote__role { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1vw, 11px); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #666; }
 
 .pp-faq { background: #fff; padding: 104px 0; }
 [data-theme="dark"] .pp-faq { background: var(--bg); }
 .pp-faq__item { border: 1px solid #eee; border-radius: 6px; margin-bottom: 8px; overflow: hidden; }
 [data-theme="dark"] .pp-faq__item { border-color: var(--bd); }
 .pp-faq__q { width: 100%; display: flex; align-items: center; gap: 16px; padding: 18px 20px; background: none; border: none; cursor: pointer; text-align: left; }
-.pp-faq__q-num { font-family: var(--font-mono), monospace; font-size: 10px; font-weight: 600; color: #bbb; flex-shrink: 0; }
+.pp-faq__q-num { font-family: var(--font-mono), monospace; font-size: clamp(10px, 1.1vw, 12px); font-weight: 600; color: #bbb; flex-shrink: 0; }
 .pp-faq__q-text { font-size: 15px; font-weight: 600; color: #1a1a1a; flex: 1; }
 [data-theme="dark"] .pp-faq__q-text { color: var(--text); }
 .pp-faq__q-icon { font-size: 20px; color: #111; flex-shrink: 0; font-weight: 300; }
@@ -2379,7 +2379,7 @@ button {
   .pp-meaning__cols { grid-template-columns: 1fr; }
   .pp-caps-grid, .pp-process-grid, .pp-usecases-grid, .pp-related-grid, .pp-verticals-grid { grid-template-columns: 1fr; }
   .pp-hero__stats-grid { grid-template-columns: 1fr 1fr; }
-  .pp-spec-table .spec-key { width: 120px; font-size: 9px; }
+  .pp-spec-table .spec-key { width: 120px; font-size: clamp(10px, 1vw, 11px); }
 }
 
 /* ── SKELETON LOADERS ────────────────────────────────────────────── */
