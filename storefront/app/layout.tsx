@@ -30,21 +30,29 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Superior Harness & Assembly | Custom Cable Assembly Manufacturer",
-    template: "%s | Superior Harness & Assembly",
+    default: "Superior Harness Co. LLC | Custom Wire Harness Manufacturing",
+    template: "%s | Superior Harness Co. LLC",
   },
   description:
-    "Custom wire harness and cable assembly manufacturer providing engineered wiring solutions for OEMs, medical devices, robotics, EV applications, and more.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_STORE_URL ?? "https://clientstore.com"
-  ),
+    "A leading provider in custom wire harness manufacturing and engineered wiring solutions. Specializing in automatic cut/strip, connector loading, and ultrasonic splicing.",
+  keywords: ["wire harness", "cable assembly", "custom wiring solutions", "Superior Harness Co. LLC", "wire manufacturing"],
+  metadataBase: new URL("https://www.superiorharness.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Superior Harness & Assembly",
+    url: "https://www.superiorharness.com",
+    title: "Superior Harness Co. LLC | Custom Wire Harness Manufacturing",
+    description: "A leading provider in custom wire harness manufacturing and engineered wiring solutions.",
+    siteName: "Superior Harness Co. LLC",
   },
   twitter: {
     card: "summary_large_image",
+    title: "Superior Harness Co. LLC",
+    description: "A leading provider in custom wire harness manufacturing and engineered wiring solutions.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   icons: {
     icon: "/favicon.png",

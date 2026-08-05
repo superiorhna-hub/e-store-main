@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 import { getProducts, getBlogs } from "@/lib/sheets"
 
-const BASE = process.env.NEXT_PUBLIC_STORE_URL ?? "https://clientstore.com"
+const BASE = process.env.NEXT_PUBLIC_STORE_URL ?? "https://www.superiorharness.com"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let productUrls: MetadataRoute.Sitemap = []
