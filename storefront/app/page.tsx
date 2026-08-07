@@ -9,6 +9,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import NewsletterPopup from "@/components/NewsletterPopup"
 import RevealObserver from "@/components/RevealObserver"
+import Faqs from "@/components/Faqs"
 
 export const metadata: Metadata = {
   title: "Superior Harness & Assembly — Custom Wire Harness Manufacturer",
@@ -26,6 +27,7 @@ export default function HomePage() {
         <IndustriesStrip />
         <Capabilities />
         <WhyUs />
+        <Faqs />
         <Cta />
       </main>
       <Footer />
