@@ -35,7 +35,27 @@ export const metadata: Metadata = {
   },
   description:
     "A leading North American provider in custom wire harness manufacturing and engineered wiring solutions. Specializing in automatic cut/strip, connector loading, and ultrasonic splicing for the US and Canadian markets.",
-  keywords: ["USA wire harness manufacturer", "North American cable assembly", "custom wire harnesses Canada", "OEM wiring solutions 2026", "Pennsylvania wire processing"],
+  keywords: [
+    "USA wire harness manufacturer",
+    "North American cable assembly",
+    "custom wire harnesses Canada",
+    "OEM wiring solutions 2026",
+    "Pennsylvania wire processing",
+    "Canadian wire harness suppliers",
+    "custom cable assembly North America",
+    "medical wire harnesses USA",
+    "industrial cable assemblies Canada",
+    "aerospace wire processing North America",
+    "automotive wire harness manufacturers USA",
+    "heavy equipment wiring solutions Canada",
+    "custom electrical harnesses North America",
+    "IPC/WHMA-A-620 certified wire harness",
+    "low volume high mix wire harness USA",
+    "Toronto wire harness manufacturing",
+    "Ontario cable assembly suppliers",
+    "Michigan wire harness company",
+    "Midwest custom wiring solutions"
+  ],
   metadataBase: new URL("https://www.superiorharness.com"),
   openGraph: {
     type: "website",
