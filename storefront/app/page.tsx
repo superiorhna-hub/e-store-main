@@ -12,9 +12,10 @@ import RevealObserver from "@/components/RevealObserver"
 import Faqs from "@/components/Faqs"
 
 export const metadata: Metadata = {
-  title: "Superior Harness & Assembly — Custom Wire Harness Manufacturer",
+  title: "Superior Harness & Assembly — US Custom Wire Harness Manufacturer",
   description:
-    "Custom wire harness and cable assembly manufacturer specializing in high-quality engineered wiring solutions for OEMs, medical devices, robotics, and EV applications.",
+    "Top-rated custom wire harness and cable assembly manufacturer in North America. We provide fast turnaround prototyping to high volume production for US and Canada clients.",
+  keywords: ["fast turnaround wire harness USA", "B2B custom cable assemblies North America", "prototype to production wiring Canada", "superior harness co LLC", "high volume wire processing US"],
 }
 
 export default function HomePage() {

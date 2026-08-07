@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     template: "%s | Superior Harness Co. LLC",
   },
   description:
-    "A leading provider in custom wire harness manufacturing and engineered wiring solutions. Specializing in automatic cut/strip, connector loading, and ultrasonic splicing.",
-  keywords: ["wire harness", "cable assembly", "custom wiring solutions", "Superior Harness Co. LLC", "wire manufacturing"],
+    "A leading North American provider in custom wire harness manufacturing and engineered wiring solutions. Specializing in automatic cut/strip, connector loading, and ultrasonic splicing for the US and Canadian markets.",
+  keywords: ["USA wire harness manufacturer", "North American cable assembly", "custom wire harnesses Canada", "OEM wiring solutions 2026", "Pennsylvania wire processing"],
   metadataBase: new URL("https://www.superiorharness.com"),
   openGraph: {
     type: "website",

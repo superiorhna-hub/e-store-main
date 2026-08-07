@@ -3,8 +3,9 @@ import Link from "next/link"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "Products | Superior Harness & Assembly",
-  description: "Explore the full range of precision wire harnesses, cable assemblies, battery cables, solar assemblies, PCB assemblies, coil cables, and EV connectors we manufacture.",
+  title: "Products & Capabilities | Superior Harness & Assembly USA",
+  description: "Explore our precision wire harnesses, cable assemblies, and overmolded cables. We offer advanced capabilities like ultrasonic splicing and automatic cut/strip for North America.",
+  keywords: ["ultrasonic wire splicing USA", "automatic cut and strip services", "connector loading verification", "custom overmolded cables North America", "industrial control panel wiring US"],
 }
 
 const PRODUCTS = [

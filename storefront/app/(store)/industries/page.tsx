@@ -3,9 +3,10 @@ import Link from "next/link"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "Industries Served | Wire Harness & Cable Assembly Manufacturing",
+  title: "Industries Served | US Wire Harness & Cable Assembly Manufacturing",
   description:
-    "Superior Harness & Assembly manufactures precision wire harnesses and cable assemblies for automotive, medical, aerospace, EV, robotics, solar, telecom, construction, agricultural, and more.",
+    "Superior Harness & Assembly provides reliable wire harnesses for North American automotive, medical, EV, robotics, and industrial sectors.",
+  keywords: ["medical device wire harness USA", "EV renewable energy wiring Canada", "automotive cable assemblies North America", "robotics automation wiring solutions", "aerospace defense wire processing"],
 }
 
 const INDUSTRIES = [
