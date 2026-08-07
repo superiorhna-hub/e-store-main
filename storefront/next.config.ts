@@ -53,6 +53,17 @@ const securityHeaders = [
 ]
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  // Automatically minify using SWC
+  swcMinify: true,
+  // Remove console.logs in production to shave off JS weight
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+  experimental: {
+    // Enable optimizePackageImports for smaller bundles
+    optimizePackageImports: ["lucide-react", "date-fns"],
+  },
   async redirects() {
     return [
       {
@@ -63,8 +74,14 @@ const nextConfig: NextConfig = {
     ]
   },
   // Apply security headers to all responses
-  // Removed temporarily for debugging
-
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders,
+      },
+    ]
+  },
 
   // Allowed remote image hostnames for next/image
   // Add any CDN or external image host your products use here
