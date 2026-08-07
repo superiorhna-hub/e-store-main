@@ -48,7 +48,7 @@ export default function AboutPage() {
         <div className="W">
           <div className="about-split">
             <div className="about-split__img rv" style={{ position: "relative" }}>
-              <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1400" alt="Factory Setup" style={{ width: "100%", height: "auto", display: "block",  objectFit: "contain" }} />
+              <Image src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1400" alt="Factory Setup" width={1400} height={933} priority style={{ width: "100%", height: "auto", display: "block",  objectFit: "contain" }} />
             </div>
             <div className="rv rv-d1">
               <div className="lbl" style={{ marginBottom: 18 }}>About Superior Harnessing</div>

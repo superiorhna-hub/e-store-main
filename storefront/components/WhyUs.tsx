@@ -22,7 +22,7 @@ export default function WhyUs() {
       <div className="W">
         <div className="why-grid rv">
           {/* Left image */}
-          <div className="why-media" style={{ position: "relative", background: "var(--bg3)" }}>
+          <div className="why-media" style={{ position: "relative", background: "var(--bg3)", minHeight: 480 }}>
             <Image
               src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=1200"
               alt="Engineering and manufacturing"
