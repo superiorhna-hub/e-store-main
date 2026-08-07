@@ -6,6 +6,7 @@
 /* ── ECHELON GLOBAL — LIGHT (default) ───────────────────────── */
 :root {
   --bg: #ffffff;
+  --bg: #fcf9f2;
   --bg2: #f8f9fa;
   --bg3: #f1f3f5;
   --bgDk: #ffffff;
@@ -13,7 +14,7 @@
   --hBg: rgba(255, 255, 255, 0.92);
   --text: #000000;
   --text2: #444444;
-  --textM: #888888;
+  --textM: #666666;
   --inv: #ffffff;
   --acc: #000000;
   --accH: #333333;
@@ -27,7 +28,7 @@
 }
 
 [data-theme="dark"] {
-  --bg: #000000;
+  --bg: #1c1c18;
   --bg2: #111111;
   --bg3: #1a1a1a;
   --bgDk: #000000;
@@ -35,7 +36,7 @@
   --hBg: rgba(0, 0, 0, 0.92);
   --text: #ffffff;
   --text2: rgba(255, 255, 255, 0.7);
-  --textM: rgba(255, 255, 255, 0.5);
+  --textM: rgba(255, 255, 255, 0.7);
   --inv: #000000;
   --acc: #ffffff;
   --accH: #cccccc;
@@ -1695,10 +1696,12 @@ button {
   padding: 140px 24px 30px;
   pointer-events: none;
   opacity: 0;
+  visibility: hidden;
   transform: translateY(-16px);
   transition:
     opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0.28s;
 }
 
 [data-theme="light"] .mob-nav {
@@ -1708,8 +1711,13 @@ button {
 /* Open state */
 .mob-nav--open {
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
   pointer-events: auto;
+  transition:
+    opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0s;
 }
 
 /* Only show the drawer on mobile and tablet screens */

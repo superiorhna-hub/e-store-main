@@ -25,7 +25,7 @@ export default function About() {
           <p className="Bd rv d2" style={{ marginBottom: 38 }}>
             From concept to completion, we work closely with our clients to ensure every wire harness and cable assembly is built to perform in its intended environment. Our commitment to quality and customer satisfaction makes us a trusted partner for businesses looking for dependable wiring solutions.
           </p>
-          <Link href="/about" className="btn bod rv d3">
+          <Link href="/about" className="btn bod rv d3" aria-label="Learn more about Superior Harness and Assembly">
             Learn More <ArrowIcon />
           </Link>
         </div>

@@ -641,7 +641,7 @@ export default function Header() {
       </header>
 
       {/* ── Mobile drawer ── */}
-      <div className={`mob-nav${menuOpen ? " mob-nav--open" : ""}`} aria-hidden={!menuOpen}>
+      <div className={`mob-nav${menuOpen ? " mob-nav--open" : ""}`}>
         <nav className="mob-nav__links" style={{ overflowY: "auto", paddingBottom: 24 }}>
           {/* Products Accordion */}
           <div>
