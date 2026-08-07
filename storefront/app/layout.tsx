@@ -57,6 +57,9 @@ export const metadata: Metadata = {
     "Midwest custom wiring solutions"
   ],
   metadataBase: new URL("https://www.superiorharness.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
