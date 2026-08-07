@@ -16,6 +16,8 @@ import { useCart } from "@/context/cart-context"
 import type { Product } from "@/lib/sheets"
 import { formatPrice } from "@/lib/format"
 
+import Image from "next/image"
+
 function ArrowIcon() {
   return (
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -116,11 +118,14 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 <div className="pd-img-main">
                   {hasImages ? (
                     <>
-                      <img
-                        src={images[activeImage]}
-                        alt={product.name}
-                        style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
-                      />
+                      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                        <Image
+                          src={images[activeImage]}
+                          alt={product.name}
+                          fill
+                          style={{ objectFit: "contain", display: "block" }}
+                        />
+                      </div>
                       {images.length > 1 && (
                         <>
                           <button className="pd-img-arrow pd-img-arrow--l" onClick={() => setActiveImage(p => (p === 0 ? images.length - 1 : p - 1))} aria-label="Previous image">
@@ -145,7 +150,9 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                         className={`pd-thumb${activeImage === idx ? " active" : ""}`}
                         onClick={() => setActiveImage(idx)}
                       >
-                        <img src={img} alt={`${product.name} view ${idx + 1}`} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+                        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                          <Image src={img} alt={`${product.name} view ${idx + 1}`} fill style={{ objectFit: "contain" }} />
+                        </div>
                       </button>
                     ))}
                   </div>
@@ -256,7 +263,9 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               <div className="pd-gallery-grid">
                 {images.map((img, idx) => (
                   <div key={idx} className="pd-gallery-item">
-                    <img src={img} alt={`${product.name} profile ${idx + 1}`} style={{ width: "100%", height: "auto", display: "block", padding: 16 }} />
+                    <div style={{ position: "relative", width: "100%", minHeight: "200px" }}>
+                      <Image src={img} alt={`${product.name} profile ${idx + 1}`} fill style={{ objectFit: "contain", padding: 16 }} />
+                    </div>
                   </div>
                 ))}
               </div>
