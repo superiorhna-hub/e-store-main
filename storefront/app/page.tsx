@@ -1,15 +1,17 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import Hero from "@/components/Hero"
-import About from "@/components/About"
-import IndustriesStrip from "@/components/IndustriesStrip"
-import Capabilities from "@/components/Capabilities"
-import WhyUs from "@/components/WhyUs"
-import Cta from "@/components/Cta"
 import Header from "@/components/Header"
-import Footer from "@/components/Footer"
-import NewsletterPopup from "@/components/NewsletterPopup"
-import RevealObserver from "@/components/RevealObserver"
-import Faqs from "@/components/Faqs"
+
+const About = dynamic(() => import("@/components/About"))
+const IndustriesStrip = dynamic(() => import("@/components/IndustriesStrip"))
+const Capabilities = dynamic(() => import("@/components/Capabilities"))
+const WhyUs = dynamic(() => import("@/components/WhyUs"))
+const Cta = dynamic(() => import("@/components/Cta"))
+const Footer = dynamic(() => import("@/components/Footer"))
+const NewsletterPopup = dynamic(() => import("@/components/NewsletterPopup"))
+const RevealObserver = dynamic(() => import("@/components/RevealObserver"))
+const Faqs = dynamic(() => import("@/components/Faqs"))
 
 export const metadata: Metadata = {
   title: "Superior Harness & Assembly — US Custom Wire Harness Manufacturer",
