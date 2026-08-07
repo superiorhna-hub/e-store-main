@@ -54,8 +54,6 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // Automatically minify using SWC
-  swcMinify: true,
   // Remove console.logs in production to shave off JS weight
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
