@@ -636,9 +636,10 @@ button {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 16px;
+  padding: 40px 16px;
+  overflow-y: auto;
   animation: overlayIn 0.2s ease;
 }
 
@@ -656,13 +657,11 @@ button {
 .quote-modal {
   width: 100%;
   max-width: 580px;
-  max-height: 92vh;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
   animation: modalIn 0.26s cubic-bezier(0.34, 1.1, 0.64, 1);
-  display: flex;
-  flex-direction: column;
+  margin: auto;
 }
 
 @keyframes modalIn {
@@ -724,8 +723,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  overflow-y: auto;
-  flex: 1;
 }
 
 .quote-modal__grid {
@@ -850,8 +847,8 @@ button {
   .quote-modal__grid { grid-template-columns: 1fr; }
   .quote-modal__form { padding: 20px 18px 24px; }
   .quote-modal__hdr { padding: 18px 18px 16px; }
-  .quote-overlay { padding: 12px; }
-  .quote-modal { max-height: calc(100vh - 24px); }
+  .quote-overlay { padding: 20px 12px; }
+  .quote-modal { margin: auto; }
 }
 
 
