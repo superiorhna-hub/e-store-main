@@ -657,13 +657,10 @@ button {
   width: 100%;
   max-width: 580px;
   max-height: 92vh;
-  overflow-y: auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
   animation: modalIn 0.26s cubic-bezier(0.34, 1.1, 0.64, 1);
-  /* Important: clip children to border-radius */
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -728,7 +725,7 @@ button {
   flex-direction: column;
   gap: 18px;
   overflow-y: auto;
-  max-height: calc(92vh - 80px);
+  flex: 1;
 }
 
 .quote-modal__grid {
@@ -854,7 +851,7 @@ button {
   .quote-modal__form { padding: 20px 18px 24px; }
   .quote-modal__hdr { padding: 18px 18px 16px; }
   .quote-overlay { padding: 12px; }
-  .quote-modal { max-height: calc(100vh - 24px); border-radius: 8px; }
+  .quote-modal { max-height: calc(100vh - 24px); }
 }
 
 
