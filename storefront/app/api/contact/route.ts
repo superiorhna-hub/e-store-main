@@ -27,6 +27,7 @@ const schema = z.object({
   subject:  z.string().min(1, "Subject is required").transform(stripEmoji),
   message:  z.string().min(10, "Message must be at least 10 characters").transform(stripEmoji),
   honeypot: z.string().max(0, "Bot detected"),
+  recaptchaToken: z.string().min(1, "reCAPTCHA verification failed"),
 })
 
 export async function POST(request: Request) {
@@ -49,7 +50,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: parsed.error.issues[0]?.message }, { status: 400 })
     }
 
-    const { name, email, subject, message } = parsed.data
+    const { name, email, subject, message, recaptchaToken } = parsed.data
+
+    // Verify reCAPTCHA token
+    const recaptchaRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+    })
+    const recaptchaData = await recaptchaRes.json()
+    
+    if (!recaptchaData.success) {
+      console.error("reCAPTCHA failed:", recaptchaData)
+      return NextResponse.json({ error: "reCAPTCHA verification failed. Please try again." }, { status: 400 })
+    }
 
     // Escape all user-supplied strings before HTML template interpolation.
     // Newlines are converted to <br> AFTER escaping so the < > chars in

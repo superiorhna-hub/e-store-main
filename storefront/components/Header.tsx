@@ -5,6 +5,7 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import { useCart } from "@/context/cart-context"
+import ReCAPTCHA from "react-google-recaptcha"
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
@@ -203,12 +204,15 @@ async function compressImage(file: File): Promise<File> {
 function QuoteModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const overlayRef = useRef<HTMLDivElement>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [files, setFiles] = useState<File[]>([])
   const [fileError, setFileError] = useState("")
   const [dragOver, setDragOver] = useState(false)
   const [compressing, setCompressing] = useState(false)
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
+  const [errorMsg, setErrorMsg] = useState("")
 
   async function addFiles(incoming: File[]) {
     setFileError("")
@@ -245,10 +249,18 @@ function QuoteModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    if (!recaptchaToken) {
+      setErrorMsg("Please complete the reCAPTCHA verification.")
+      return
+    }
+
     setSending(true)
+    setErrorMsg("")
     const fd = new FormData(e.currentTarget)
     // Append files — the hidden input is controlled via state, not the form itself
     files.forEach(f => fd.append("attachments", f))
+    fd.append("recaptchaToken", recaptchaToken)
 
     try {
       const res = await fetch("/api/quote", {
@@ -258,12 +270,15 @@ function QuoteModal({ open, onClose }: { open: boolean; onClose: () => void }) {
       })
       if (res.ok) {
         setSubmitted(true)
+        setFiles([])
+        if (recaptchaRef.current) recaptchaRef.current.reset()
+        setRecaptchaToken(null)
       } else {
         const err = await res.json()
-        alert(err.error || "Failed to submit quote")
+        setErrorMsg(err.error || "Failed to submit quote")
       }
     } catch (err) {
-      alert("Failed to submit quote request. Please try again.")
+      setErrorMsg("Failed to submit quote request. Please try again.")
     } finally {
       setSending(false)
     }
@@ -385,6 +400,24 @@ function QuoteModal({ open, onClose }: { open: boolean; onClose: () => void }) {
                 </div>
               )}
             </div>
+            <div style={{ display: "flex", justifyContent: "flex-start", marginTop: 10, width: "100%", overflow: "hidden" }}>
+              <div style={{ transform: "scale(0.88)", transformOrigin: "left center" }}>
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "dummy_key"}
+                  onChange={(token) => {
+                    setRecaptchaToken(token)
+                    if (token) setErrorMsg("")
+                  }}
+                />
+              </div>
+            </div>
+
+            {errorMsg && (
+              <div style={{ padding: "10px 14px", background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.3)", borderRadius: 8, color: "#ef4444", fontSize: 14 }}>
+                {errorMsg}
+              </div>
+            )}
 
             <button type="submit" className="quote-modal__submit" disabled={sending || compressing}>
               {compressing ? "Optimising images…" : sending ? "Sending..." : "Submit Request"}

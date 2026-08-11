@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
+import ReCAPTCHA from "react-google-recaptcha"
 
 const s = {
   input: {
@@ -23,6 +24,8 @@ export default function ContactClient() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
   const isSubmitting = useRef(false)
   const [errorMsg, setErrorMsg] = useState("")
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
 
   const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [field]: e.target.value }))
@@ -31,6 +34,11 @@ export default function ContactClient() {
     e.preventDefault()
     if (isSubmitting.current) return
 
+    if (!recaptchaToken) {
+      setErrorMsg("Please complete the reCAPTCHA verification.")
+      return
+    }
+
     isSubmitting.current = true
     setStatus("sending")
     setErrorMsg("")
@@ -38,12 +46,14 @@ export default function ContactClient() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form }),
+        body: JSON.stringify({ ...form, recaptchaToken }),
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error)
       setStatus("success")
       setForm({ name: "", email: "", phone: "", subject: "", message: "", honeypot: "" })
+      if (recaptchaRef.current) recaptchaRef.current.reset()
+      setRecaptchaToken(null)
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong")
       setStatus("error")
@@ -181,7 +191,20 @@ export default function ContactClient() {
                   autoComplete="off"
                 />
 
-                {status === "error" && (
+                <div style={{ display: "flex", justifyContent: "flex-start", marginTop: 10, width: "100%", overflow: "hidden" }}>
+                  <div style={{ transform: "scale(0.88)", transformOrigin: "left center" }}>
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "dummy_key"}
+                      onChange={(token) => {
+                        setRecaptchaToken(token)
+                        if (token) setErrorMsg("")
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {errorMsg && (
                   <div style={{
                     padding: "12px 16px", background: "rgba(239,68,68,0.08)",
                     border: "1px solid rgba(239,68,68,0.3)", borderRadius: 8,

@@ -27,6 +27,7 @@ const schema = z.object({
   quantity:    z.string().default("").transform(stripEmoji),
   description: z.string().min(10, "Please describe your project in at least 10 characters").transform(stripEmoji),
   honeypot:    z.string().max(0, "Bot detected"),
+  recaptchaToken: z.string().min(1, "reCAPTCHA verification failed"),
 })
 
 export async function POST(request: Request) {
@@ -50,6 +51,7 @@ export async function POST(request: Request) {
       quantity:    formData.get("quantity")    ?? "",
       description: formData.get("description") ?? "",
       honeypot:    formData.get("honeypot")    ?? "",
+      recaptchaToken: formData.get("recaptchaToken") ?? "",
     }
 
     const parsed = schema.safeParse(rawData)
@@ -57,7 +59,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: parsed.error.issues[0]?.message }, { status: 400 })
     }
 
-    const { name, email, phone, company, application, quantity, description } = parsed.data
+    const { name, email, phone, company, application, quantity, description, recaptchaToken } = parsed.data
+
+    // Verify reCAPTCHA token
+    const recaptchaRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+    })
+    const recaptchaData = await recaptchaRes.json()
+    
+    if (!recaptchaData.success) {
+      console.error("reCAPTCHA failed:", recaptchaData)
+      return NextResponse.json({ error: "reCAPTCHA verification failed. Please try again." }, { status: 400 })
+    }
 
     // Build nodemailer attachments from uploaded files
     const fileEntries = formData.getAll("attachments")
