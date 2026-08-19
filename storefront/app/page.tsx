@@ -14,10 +14,10 @@ const RevealObserver = dynamic(() => import("@/components/RevealObserver"))
 const Faqs = dynamic(() => import("@/components/Faqs"))
 
 export const metadata: Metadata = {
-  title: "Superior Harness & Assembly — US Custom Wire Harness Manufacturer",
+  title: "Superior Harness & Assembly — Custom Wire Harness & Cable Assembly Manufacturer",
   description:
-    "Top-rated custom wire harness and cable assembly manufacturer in North America. We provide fast turnaround prototyping to high volume production for US and Canada clients.",
-  keywords: ["fast turnaround wire harness USA", "B2B custom cable assemblies North America", "prototype to production wiring Canada", "superior harness co LLC", "high volume wire processing US"],
+    "Leading US manufacturer specializing in aerospace wire assemblies, medical equipment cable assemblies, robotics cables, and automotive wiring. We support OEMs and startups with small batch production to high-volume manufacturing.",
+  keywords: ["aerospace wire assemblies", "medical equipment cable assemblies", "robotics cables", "automotive cable assemblies", "OEM wire harnessing", "small batch production wire harness", "white goods manufacturers wire harness", "custom cable assemblies for startups"],
 }
 
 export default function HomePage() {

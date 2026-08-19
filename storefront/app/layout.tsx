@@ -36,25 +36,22 @@ export const metadata: Metadata = {
   description:
     "A leading North American provider in custom wire harness manufacturing and engineered wiring solutions. Specializing in automatic cut/strip, connector loading, and ultrasonic splicing for the US and Canadian markets.",
   keywords: [
-    "USA wire harness manufacturer",
-    "North American cable assembly",
-    "custom wire harnesses Canada",
-    "OEM wiring solutions 2026",
-    "Pennsylvania wire processing",
-    "Canadian wire harness suppliers",
-    "custom cable assembly North America",
-    "medical wire harnesses USA",
-    "industrial cable assemblies Canada",
-    "aerospace wire processing North America",
-    "automotive wire harness manufacturers USA",
-    "heavy equipment wiring solutions Canada",
-    "custom electrical harnesses North America",
-    "IPC/WHMA-A-620 certified wire harness",
-    "low volume high mix wire harness USA",
-    "Toronto wire harness manufacturing",
-    "Ontario cable assembly suppliers",
+    "custom wire harness manufacturer USA",
+    "OEM wire harnessing",
+    "cable assembly manufacturing North America",
     "Michigan wire harness company",
-    "Midwest custom wiring solutions"
+    "Pennsylvania wire processing",
+    "Philadelphia custom cable assemblies",
+    "Charlotte wire harness suppliers",
+    "New York wire harness manufacturer",
+    "Texas OEM wiring solutions",
+    "North Carolina cable assembly",
+    "Illinois industrial wire harnesses",
+    "California medical wire harnesses",
+    "Boston custom electrical harnesses",
+    "Ohio heavy equipment wiring",
+    "IPC/WHMA-A-620 certified wire harness",
+    "low volume high mix wire harness USA"
   ],
   metadataBase: new URL("https://www.superiorharness.com"),
   alternates: {
@@ -91,13 +88,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
+        {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG1DPLRRCB"></script>
+        {/* Google Ads */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18391804952"></script>
         <script dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-VG1DPLRRCB');
+            gtag('config', 'AW-18391804952');
           `
         }} />
       </head>

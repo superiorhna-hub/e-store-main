@@ -37,15 +37,15 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      // Scripts: self + inline/eval (Next.js needs these) + Google Analytics + Google reCAPTCHA
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/",
+      // Scripts: self + inline/eval + Google Analytics + Google reCAPTCHA + Google Ads
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https: http://localhost:*",
       // Frames: Google OAuth + Google reCAPTCHA
       "frame-src https://accounts.google.com https://www.google.com/recaptcha/",
-      // Fetch/XHR: own API + Google OAuth + Google Analytics
-      "connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com https://www.googleapis.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
+      // Fetch/XHR: own API + Google OAuth + Google Analytics + Google Ads
+      "connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com https://www.googleapis.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googleadservices.com https://www.google.com https://googleads.g.doubleclick.net https://www.google.co.in",
       "form-action 'self'",
       "base-uri 'self'",
     ].join("; "),

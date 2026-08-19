@@ -50,6 +50,14 @@ export default function ContactClient() {
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error)
+      
+      // Google Ads Conversion Tracking (Quote Form Submission)
+      // @ts-ignore
+      if (typeof window !== 'undefined' && window.gtag) {
+        // @ts-ignore
+        window.gtag('event', 'conversion', { 'send_to': 'AW-18391804952/d07dCN_DoeIcEJjY8sFE' });
+      }
+      
       setStatus("success")
       setForm({ name: "", email: "", phone: "", subject: "", message: "", honeypot: "" })
       if (recaptchaRef.current) recaptchaRef.current.reset()
