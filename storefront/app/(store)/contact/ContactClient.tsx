@@ -52,10 +52,8 @@ export default function ContactClient() {
       if (!res.ok) throw new Error(data.error)
       
       // Google Ads Conversion Tracking (Quote Form Submission)
-      // @ts-ignore
-      if (typeof window !== 'undefined' && window.gtag) {
-        // @ts-ignore
-        window.gtag('event', 'conversion', { 'send_to': 'AW-18391804952/d07dCN_DoeIcEJjY8sFE' });
+      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        ;(window as any).gtag('event', 'conversion', { 'send_to': 'AW-18391804952/dO7dCN_DoeIcEJjY8sFE' });
       }
       
       setStatus("success")

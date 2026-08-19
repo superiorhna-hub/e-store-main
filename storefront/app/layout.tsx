@@ -97,10 +97,10 @@ export default function RootLayout({
         <Script strategy="afterInteractive" id="google-tags">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-Z2ZLVYGDVG');
-            gtag('config', 'AW-18391804952');
+            window.gtag = function(){window.dataLayer.push(arguments);}
+            window.gtag('js', new Date());
+            window.gtag('config', 'G-Z2ZLVYGDVG');
+            window.gtag('config', 'AW-18391804952');
           `}
         </Script>
         
