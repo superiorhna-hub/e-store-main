@@ -79,6 +79,8 @@ export const metadata: Metadata = {
   },
 }
 
+import Script from "next/script"
+
 export default function RootLayout({
   children,
 }: {
@@ -88,21 +90,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG1DPLRRCB"></script>
-        {/* Google Ads */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18391804952"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
+      </head>
+      <body suppressHydrationWarning className={`${hanken.variable} ${inter.variable} ${mono.variable}`}>
+        {/* Google Analytics & Ads Unconditional Tracking */}
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZLVYGDVG" />
+        <Script strategy="afterInteractive" id="google-tags">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-Z2ZLVYGDVG');
             gtag('config', 'AW-18391804952');
-          `
-        }} />
-      </head>
-      <body suppressHydrationWarning className={`${hanken.variable} ${inter.variable} ${mono.variable}`}>
+          `}
+        </Script>
+        
         <Providers>{children}</Providers>
       </body>
     </html>
