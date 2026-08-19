@@ -273,6 +273,15 @@ function QuoteModal({ open, onClose }: { open: boolean; onClose: () => void }) {
         setFiles([])
         if (recaptchaRef.current) recaptchaRef.current.reset()
         setRecaptchaToken(null)
+
+        // Track Google Ads Conversion
+        if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+          ;(window as any).gtag("event", "conversion", {
+            "send_to": "AW-18391804952/dO7dCN_DoeIcEJjY8sFE",
+            "value": 1.0,
+            "currency": "USD"
+          })
+        }
       } else {
         const err = await res.json()
         setErrorMsg(err.error || "Failed to submit quote")
